@@ -1,95 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-#head-container {
-    background-color: rgb(214, 200, 200);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    height: 7rem;
-}
-/* heading */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 #headline {
-    font-family: "Lobster", sans-serif;
-    font-size: 3rem;
-
-}
-
-
-form {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid rgb(188, 188, 188);
+    font-family: "Satisfy", cursive;
+    width: auto;
+    border: 1px solid black;
     height: 6rem;
-    font-family: "Poppins", sans-serif;
-
-}
-form input {
-    border: 1px solid rgb(73, 69, 69);
-    width: 12rem;
-    height: 2rem;
-    border-radius: 20px;
-    padding-left: 0.5rem;
-}
-form button {
-    border: 1px solid #9f9ff1;
-    background-color: #9f9ff1;
-    width: 4rem;
-    height: 2rem;
-    border-radius: 20px;
-}
-form select{
-    border: 1px solid blue;
-    width: 4rem;
-    border-radius: 5px;
-    padding-left: 2px;
-    padding-right: 2px;
-}
-
-footer {
-    font-family: "Poppins", sans-serif;
-    width: auto;
-    height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(225, 241, 242);
-
+    background-color: #b4d8bd;
+    border: 1px solid #b4d8bd;
 }
-#Body-container {
-    width: auto;
-    height: 32rem;
-    /* border: 1px solid black; */
+#flash-card {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 3rem;
+}
+
+.flash-card-box {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 25rem;
+    height:15rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-#my_list {
-    list-style: none;
-    display: flex;
-    gap: 5rem;
     justify-content: center;
     align-items: center;
-    font-family: "Poppins", sans-serif;
-    flex-wrap: wrap;
-    justify-self: start;
+    font-family: "Shadows Into Light", cursive;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.Question-true {
+    display: none;
+    /* background-color:#95b0e1 ; */
 
 }
+#foo {
+    background-color: #c5c9cb;
+    border: 1px solid #c5c9cb;
+    margin-top: 2.3rem;
+    width: auto;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Satisfy", cursive;
 
-#x-btn {
-    border: none;
-    background-color: inherit;
-}
-#clear-btn {
-    justify-self: end;
-    width: 6rem;
-    height: 2.5rem;
-    border-radius: 10px;
-    border: 1px solid #9f9ff1;
-    background-color: #9f9ff1;
 }

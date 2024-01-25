@@ -1,86 +1,85 @@
-import { useState } from "react";
+import { useState } from "react"
 import "./App.css"
+const game = [
+    {
+        id:1,
+        question:" What are two things you can never eat for breakfast?",
+        answer:"Lunch and Dinner"
+    },
+    {
+        id:2,
+        question:" What is always coming but never arrives? ",
+        answer:"Tomorrow"
+    },
+    {
+        id:3,
+        question:"What gets wetter the more it dries?",
+        answer:"A towel"
+    },
+    {
+        id:4,
+        question:"What can be broken but never held? ",
+        answer:"A promise"
+    },
+    {
+        id:5,
+        question:"What word is spelled incorrectly in every single dictionary?",
+        answer:"ncorrectly"
+    },
+    {
+        id:6,
+        question:" What is it that lives if it is fed, and dies if you give it a drink?",
+        answer:"Fire"
+    },
+]
 
-
-export default function App(){
-    const [items,setItems] = useState([])
-    function upDATE(item){
-        setItems((e)=>[...e,item])
-        console.log(items)
-   
-    }
-    function OnDelete(id){
-        setItems(items=>items.filter(item =>item.id !== id))
-    }
-    function OnClear(){
-        setItems([])
-    }
-  
-
-
+export default function App (){
     return (
         <>
         <Header />
-        <Form fun = {upDATE} />
-        <Body item_d = {items} fun2 = {OnDelete} fun3 = {OnClear} />
+        <Body />
         <Footer />
         </>
     )
 }
+
+
 function Header(){
     return (
-        <div id="head-container">
-            <h1 id="headline">FAR AWAY</h1>
+        <div id="headline">
+            <h1>Flash Card Game</h1>
         </div>
     )
 }
-function Form ({fun}){
-    const [description,setDescription]=useState("")
-    const[number , setNumber] = useState(1)
+function Body(){
 
-    function handleEvent(e){
-        e.preventDefault();
-        if(!description) return;
-        const newItems = {
-            description,number,packed:false,id:Date.now()
-        }
-        // console.log(newItems)
-        setDescription("")
-        setNumber(1)
-        fun(newItems)
-  
-        
-        
-
+    return(
+        <div id="flash-card" >
+            {game.map((e)=><BodyElements questionAndanswer = {e} />)}
+        </div>
+    )
+}
+function BodyElements({questionAndanswer,}){
+    const [initialQuestion,setQuestion]=useState(true)
+    const [initialAns,setAnswer] = useState(true)
+    function handleEvent(){
+        setQuestion(change => !change)
+        setAnswer(change => !change)
     }
-    return(
-        <form>
-            <span>What do you need for your 😍 trip?</span>
-            <select onChange={e =>setNumber(e.target.value)} value={number}>
-                {Array.from({length:20},(_,i)=>i+1).map(e=><option value={e} key={e}>{e}</option>)}
-            </select>
-            <input type="text" placeholder="type . . ." value={description} onChange={e =>setDescription(e.target.value)}/>
-            <button onClick={handleEvent}>ADD</button>
-        </form>
-    )
-}
-function Body({item_d,fun2,fun3}){
     return (
-        <div id="Body-container">
-            <ul id="my_list">
-                {item_d.map((e)=><li>{e.number}.{e.description}
-                <button id="x-btn" onClick={()=>fun2(e.id)}>❌</button>
-                </li>)}
-                
-            </ul>
-            <button onClick={fun3} id="clear-btn">ClearList</button>
+        <>
+        <div className="flash-card-box" style={{backgroundColor:`${initialQuestion?"white":"#95b0e1"}`}}  onClick={handleEvent} >
+            <span className={`${initialQuestion ? "":"Question-true"}`} >{questionAndanswer.question}</span>
+            <span className={`${initialAns?"Question-true":""}`}>{questionAndanswer.answer}</span>
         </div>
+        </>
     )
 }
-function Footer(){
+
+function Footer (){
     return(
-        <footer>
-            <span>You have  items on your list, and you already packed X(X%)</span>
-        </footer>
+        <div id="foo">
+            <span>Matermindy</span>
+        </div>
     )
 }
