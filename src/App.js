@@ -79,7 +79,7 @@ function BodyElements({questionAndanswer,}){
 function Footer (){
     return(
         <div id="foo">
-            <span>Matermindy</span>
+            <span>Mastermindy</span>
         </div>
     )
 }
